@@ -30,7 +30,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_enroleasy_edit_form extends block_edit_form {
-    
+
     /**
      * The definition of the fields to use.
      *
@@ -45,12 +45,12 @@ class block_enroleasy_edit_form extends block_edit_form {
         $mform->addElement('selectyesno', 'config_hidetitle', get_string('confighidetitle', 'block_enroleasy'));
         $mform->setType('config_hidetitle', PARAM_INT);
     }
-    
-   /**
-     * The definition of the default config data.
-     *
-     * @param object $defaults
-     */
+
+    /**
+    * The definition of the default config data.
+    *
+    * @param object $defaults
+    */
     public function set_data($defaults) {
         if (!$this->block->user_can_edit() && !empty($this->block->config->title)) {
             // If a title has been set but the user cannot edit it format it nicely.

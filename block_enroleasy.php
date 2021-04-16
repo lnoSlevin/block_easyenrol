@@ -61,7 +61,7 @@ class block_enroleasy extends block_base {
         $this->content->icons = array();
         $this->content->footer = '';
 
-        $text="";
+        $text = "";
         $plugin = enrol_get_plugin('easy');
         if ($plugin && !isguestuser()) {
             $text = $plugin->get_form();
