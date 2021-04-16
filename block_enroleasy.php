@@ -139,7 +139,7 @@ class block_enroleasy extends block_base {
      *
      * @return boolean
      */
-    public function _self_test() {
+    private function _self_test() {
         return true;
     }
 
