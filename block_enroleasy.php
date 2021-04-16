@@ -89,7 +89,7 @@ class block_enroleasy extends block_base {
             $this->hidetitle = $this->config->hidetitle;
         }
     }
-    
+
     /**
      * Core function, specifies where the block can be used.
      * @return array
@@ -103,7 +103,7 @@ class block_enroleasy extends block_base {
             'mod' => true,
             'mod-quiz' => false);
     }
-    
+
     /**
      * All multiple instances of this block
      * @return bool Returns false
