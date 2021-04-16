@@ -1,9 +1,18 @@
 # Easy Enrollments block #
 
-Block with enrolment form for enrolment method Easy Enrollments, 
-which can be used as alternative solution for implementation to theme.
+The Easy Enrollments block is block with form from Easy Enrollments method, 
+which was available only in supported themes. 
+From now you can use this enrollment method separately.
 
-TODO Provide more detailed description here.
+Block with enrollment form for enrollment method Easy Enrollments <https://moodle.org/plugins/enrol_easy>, 
+which can be used as alternative solution for implementation 
+of input form from Easy Enrollments <https://moodle.org/plugins/enrol_easy> method, 
+when are you not using required themes in yours platform.
+
+You can add the Easy Enrollments block to your frontpage and you can use it as main gate for course enrollments.
+
+After block is inserted to yours system, you can use QR code or 6 digit code 
+for enrolling to the course via Easy Enrollments <https://moodle.org/plugins/enrol_easy> method.
 
 ## License ##
 

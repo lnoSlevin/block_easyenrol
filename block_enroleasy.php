@@ -38,6 +38,7 @@ class block_enroleasy extends block_base {
     public function init() {
         // Needed by Moodle to differentiate between blocks.
         $this->title = get_string('pluginname', 'block_enroleasy');
+        $this->hidetitle = 0;
     }
 
     /**
@@ -83,6 +84,13 @@ class block_enroleasy extends block_base {
         } else {
             $this->title = $this->config->title;
         }
+
+        //load title hide config nd make sure it's never empty.
+        if (empty($this->config->title)) {
+            $this->hidetitle = 0;
+        } else {
+            $this->hidetitle = $this->config->hidetitle;
+        }
     }
 
     // my moodle can only have SITEID and it's redundant here, so take it away
@@ -114,7 +122,7 @@ class block_enroleasy extends block_base {
      * @return boolean
      */
     public function hide_header() {
-        if ($this->config->hidetitle != 1) {
+        if ($this->hidetitle != 1) {
             return false;
         } else {
             return true;

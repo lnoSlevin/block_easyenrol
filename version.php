@@ -30,5 +30,5 @@ $plugin->maturity  = MATURITY_STABLE;
 $plugin->version = 2021041300;
 $plugin->requires = 2018051700;
 $plugin->dependencies = [
-    'enrol_easy' => 2020120200,
+    'enrol_easy' => 2018051400,
 ];
