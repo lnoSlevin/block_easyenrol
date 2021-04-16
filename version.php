@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_enroleasy';
-$plugin->release = '1.0.0';
+$plugin->release = '1.0.1';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->version = 2021041300;
 $plugin->requires = 2018051700;
