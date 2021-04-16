@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -16,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * The block_enroleasy for Easy enrolment mehtod.
+ * The block_enroleasy for Easy enrollment method.
  *
  * @package     block_enroleasy
  * @copyright   2021 Lukas Celinak <lukascelinak@gmail.com>
@@ -67,8 +66,6 @@ class block_enroleasy extends block_base {
             $text = $plugin->get_form();
         }
         $this->content->text = $text;
-
-
         return $this->content;
     }
 
@@ -85,15 +82,18 @@ class block_enroleasy extends block_base {
             $this->title = $this->config->title;
         }
 
-        //load title hide config nd make sure it's never empty.
+        // Load title hide config nd make sure it's never empty.
         if (empty($this->config->title)) {
             $this->hidetitle = 0;
         } else {
             $this->hidetitle = $this->config->hidetitle;
         }
     }
-
-    // my moodle can only have SITEID and it's redundant here, so take it away
+    
+    /**
+     * Core function, specifies where the block can be used.
+     * @return array
+     */
     public function applicable_formats() {
         return array('all' => false,
             'site' => true,
@@ -103,7 +103,11 @@ class block_enroleasy extends block_base {
             'mod' => true,
             'mod-quiz' => false);
     }
-
+    
+    /**
+     * All multiple instances of this block
+     * @return bool Returns false
+     */
     public function instance_allow_multiple() {
         return false;
     }
@@ -112,13 +116,13 @@ class block_enroleasy extends block_base {
      * Has config
      * @return boolean
      */
-    function has_config() {
+    public function has_config() {
         return false;
     }
 
     /**
      * Hide header based on block config
-     * 
+     *
      * @return boolean
      */
     public function hide_header() {
@@ -129,7 +133,13 @@ class block_enroleasy extends block_base {
         }
     }
 
-    function _self_test() {
+    /**
+     * Tests if this block has been implemented correctly.
+     * Also, $errors isn't used right now
+     *
+     * @return boolean
+     */
+    public function _self_test() {
         return true;
     }
 

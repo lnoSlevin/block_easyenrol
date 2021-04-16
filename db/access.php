@@ -16,7 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * The block_enroleasy for Easy enrolment mehtod.
+ * The block_enroleasy for Easy enrollment method.
  *
  * @package     block_enroleasy
  * @copyright   2021 Lukas Celinak <lukascelinak@gmail.com>

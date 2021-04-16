@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -16,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * The block_enroleasy for Easy enrolment mehtod.
+ * The block_enroleasy for Easy enrollment method.
  *
  * @package     block_enroleasy
  * @copyright   2021 Lukas Celinak <lukascelinak@gmail.com>
@@ -42,9 +41,9 @@ class block_enroleasy_edit_form extends block_edit_form {
         $mform->setType('config_hidetitle', PARAM_INT);
     }
 
-    function set_data($defaults) {
+    public function set_data($defaults) {
         if (!$this->block->user_can_edit() && !empty($this->block->config->title)) {
-            // If a title has been set but the user cannot edit it format it nicely
+            // If a title has been set but the user cannot edit it format it nicely.
             $title = $this->block->config->title;
             $hidetitle = $this->block->config->hidetitle;
             $defaults->config_title = format_string($title, true, $this->page->context);
@@ -53,18 +52,17 @@ class block_enroleasy_edit_form extends block_edit_form {
             unset($this->block->config->title);
         }
 
-
         parent::set_data($defaults);
-        // restore $text
+        // Restore $text.
         if (!isset($this->block->config)) {
             $this->block->config = new stdClass();
         }
         if (isset($hidetitle)) {
-            // Reset the preserved title
+            // Reset the preserved title.
             $this->block->config->hidetitle = $hidetitle;
         }
         if (isset($title)) {
-            // Reset the preserved title
+            // Reset the preserved title.
             $this->block->config->title = $title;
         }
     }
