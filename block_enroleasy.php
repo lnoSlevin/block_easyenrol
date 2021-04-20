@@ -96,13 +96,7 @@ class block_enroleasy extends block_base {
      * @return array
      */
     public function applicable_formats() {
-        return array('all' => false,
-            'site' => true,
-            'site-index' => true,
-            'course-view' => true,
-            'course-view-social' => false,
-            'mod' => true,
-            'mod-quiz' => false);
+        return array('all' => false);
     }
 
     /**
