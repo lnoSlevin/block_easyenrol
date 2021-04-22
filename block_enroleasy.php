@@ -83,8 +83,8 @@ class block_enroleasy extends block_base {
             $this->title = $this->config->title;
         }
 
-        // Load title hide config nd make sure it's never empty.
-        if (empty($this->config->title)) {
+        // Load title hide config and make sure it has default value.
+        if (empty($this->config->hidetitle)) {
             $this->hidetitle = 0;
         } else {
             $this->hidetitle = $this->config->hidetitle;
