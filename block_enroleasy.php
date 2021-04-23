@@ -96,7 +96,7 @@ class block_enroleasy extends block_base {
      * @return array
      */
     public function applicable_formats() {
-        return array('all' => false);
+        return array('all' => true);
     }
 
     /**
