@@ -14,6 +14,10 @@ You can add the Easy Enrollments block to your frontpage and you can use it as m
 After block is inserted to yours system, you can use QR code or 6 digit code 
 for enrolling to the course via Easy Enrollments <https://moodle.org/plugins/enrol_easy> method.
 
+## UPDATE for Moodle 4.0 ##
+
+Block is functional gateway for actual version of Easy Enrolment Method.
+
 ## License ##
 
 2021 Lukas Celinak <lukascelinak@gmail.com>
