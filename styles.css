@@ -1,5 +1,9 @@
-.block_enroleasy .easyenrol .form-inline .form-group {
-    max-width: 60%;
+.block_enroleasy .form-group {
+    display: flex;
+}
+
+.block_enroleasy .form-group input[type="text"] {
+    flex: 1 1 auto;
 }
 
 .block_enroleasy .easyenrol .form-inline .form-group .input-group {

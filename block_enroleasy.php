@@ -64,7 +64,7 @@ class block_enroleasy extends block_base {
         $text = "";
         $plugin = enrol_get_plugin('easy');
         if ($plugin && !isguestuser()) {
-            $text = $plugin->get_form();
+            $text = $this->get_form();
         }
         $this->content->text = $text;
         return $this->content;
@@ -136,6 +136,42 @@ class block_enroleasy extends block_base {
      */
     public function _self_test() {
         return true;
+    }
+
+    public function get_form() {
+        global $CFG, $OUTPUT, $USER;
+
+        if (!enrol_is_enabled('easy') || !isloggedin()) {
+            return '';
+        }
+
+        require_once($CFG->wwwroot. '/enrol/easy/locallib.php');
+
+        $enrol_easy_qr = new moodle_url('/enrol/easy/qr.php');
+        $enrol_easy_qr = str_replace("http://", "https://", $enrol_easy_qr);
+
+        $data = array(
+            'internal' => array(
+                'sesskey' => $USER->sesskey
+            ),
+            'pages' => array(
+                'enrol_easy' => new moodle_url('/enrol/easy/index.php'),
+                'enrol_easy_qr' => $enrol_easy_qr
+            ),
+            'component' => array(
+                'main_javascript' => new moodle_url('/enrol/easy/js/enrol_easy.js'),
+                'jquery' => new moodle_url('/enrol/easy/js/jquery-3.2.0.min.js'),
+            ),
+            'config' => array(
+                'qrenabled' => get_config('qrenabled','enrol_easy') && (get_config('showqronmobile',get_config('qrenabled','enrol_easy')) || !isMobile()),
+            ),
+            'lang' => array(
+                'enrolform_course_code' => get_string('enrolform_course_code', 'enrol_easy'),
+                'enrolform_submit' => get_string('enrolform_submit', 'enrol_easy'),
+            ),
+        );
+
+        return $OUTPUT->render_from_template('block_enroleasy/form', $data);
     }
 
 }
