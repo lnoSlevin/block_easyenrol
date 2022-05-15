@@ -25,10 +25,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_enroleasy';
-$plugin->release = '1.0.2';
+$plugin->release = '1.0.3';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->version = 2021042300;
-$plugin->requires = 2018051700;
+$plugin->version = 2022051500;
+$plugin->requires = 2022041200;
 $plugin->dependencies = [
     'enrol_easy' => 2018051400,
 ];
